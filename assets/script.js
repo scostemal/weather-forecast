@@ -38,20 +38,6 @@ function searchCity() {
     })
 }
 
-// This function retreives weather data for coordinates.
-
-// function getListCity(coordinates) {
-//     apiURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=minutely,hourly&units=imperial&appid=a767954b67503e646c0379088695d623";
-
-//     fetch(apiURL).then(function (response) {
-//         if (response.ok) {
-//             response.json().then(function (data) {
-//                 getCurrentWeather(data);
-//             })
-//         }
-//     })
-// }
-
 // this function extract and display the data on the page for current weather it also adjust the uv-index dynamically based on the current rating using colors via classes and CSS
 
 function getCurrentWeather(data) {
@@ -151,5 +137,4 @@ $(".city-search").on("click", ".city-name", function () {
 
     $("#city-name")[0].textContent = $(this)[0].textContent + " (" + moment().format('M/D/YYYY') + ")";
 
-    getListCity(coordinates);
 })
