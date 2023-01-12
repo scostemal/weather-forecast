@@ -11,6 +11,7 @@ function searchCity() {
 
                 $("#city-name")[0].textContent = cityName + " (" + moment().format('M/D/YYYY') + ")";
 
+                // Haven't been able to figure out how to store the data correctly...when I click the searched cities - the city name changes, but the data on the page stays from the most recent search
                 $("#city-search-list").append('<button type="button" class="list-group-item list-group-item-light list-group-item-action city-name">' + cityName);
 
                 var lat = data.coord.lat;
@@ -118,15 +119,15 @@ function convertUnixTime(data, index) {
     return (dateObject.toLocaleDateString());
 }
 
-// This calls the search city function when the user clicks the search button and resets the form for additional submissions
+// This calls the search city function when the user clicks the search button and resets the input field for additional submissions. 
 
 $("#search-button").on("click", function (e) {
     e.preventDefault();
 
     searchCity();
 
-    // I get an error when trying to reset the form ---haven't figured it out.
-    $("form")[0].reset();
+    // I get an error when trying to reset the input ---haven't figured it out.
+    $("input")[0].reset();
 })
 
 $(".city-search").on("click", ".city-name", function () {
