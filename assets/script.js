@@ -1,5 +1,3 @@
-localStorage.clear();
-
 // This function will get the value of cityName and construct a url to retrieve data from the api and extract latitude and longitude and store in local storage. It also appends those searches on the page for call back.
 
 function searchCity() {
@@ -15,12 +13,14 @@ function searchCity() {
 
                 $("#city-search-list").append('<button type="button" class="list-group-item list-group-item-light list-group-item-action city-name">' + cityName);
 
-                const lat = data.coord.lat;
-                const lon = data.coord.lon;
+                var lat = data.coord.lat;
+                var lon = data.coord.lon;
 
                 var latLonPair = lat.toString() + " " + lon.toString();
 
                 localStorage.setItem(cityName, latLonPair);
+                console.log(cityName)
+                console.log(latLonPair)
 
                 apiURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly&units=imperial&appid=71311474f5b26fb7bbfa0bc1985b90cd";
 
