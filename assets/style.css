@@ -1,0 +1,67 @@
+body {
+    margin: 5px;
+}
+
+main {
+    display: flex;
+}
+
+section {
+    margin-top: 10px;
+}
+
+.current-weather {
+    visibility: hidden;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    display: inline;
+}
+
+/* This is styling for the UV index which will coordinate colors with mild, medium, or heavy UV index */
+
+.favorable {
+    background-color: green;
+    color: white;
+}
+
+.moderate {
+    background-color: yellow;
+    color: black;
+}
+
+.severe {
+    background-color: red;
+    color: white;
+}
+
+.uv-index-block {
+    display: flex;
+    align-items: center;
+}
+
+/* Media queries for viewport sizing*/
+
+@media screen and (max-width: 575px) {
+    .search-panel {
+        width: 40%;
+    }
+
+    .search-button-panel {
+        margin-left: 0px;
+    }
+
+    .search-panel h3 {
+        font-size: 15px;
+    }
+
+    .form-row {
+        display: block;
+        text-align: center;
+    }
+
+    .results-panel {
+        width: 60%;
+    }
+}
