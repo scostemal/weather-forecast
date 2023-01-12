@@ -13,8 +13,8 @@ Use an API to retrieve weather data for cities searched by users who are traveli
 
 ### Before user input
 
-![alt text](image.jpg)
+![alt text](/assets/images/before-input.png)
 
 ### After user input
 
-![alt text](image.jpg)
+![alt text](/assets/images/after-input.png)
