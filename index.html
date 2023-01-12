@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/style.css" />
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <header class="p-3 mb-2 bg-dark text-white text-center">
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <main>
+
+        <!-- This section is the user interaction section and also displays previous user searches -->
+        
+        <section class="w-25 p-3 d-grid gap-2 col-6 mx-auto">
+            <h4>Search for a City:</h4>
+            <input class="input-group mb-3" id="cityName" type="text" placeholder="Ex: New York">
+            <button class="btn btn-primary mb-2" type="submit" id="search-button">Search</button>
+            <div class="city-search">
+                <ul class="list-group" id="city-search-list"></ul>
+            </div>  
+        </section>
+
+        <!-- This section is for the current weather and will be hidden until data is fetched -->
+
+        <section class="w-75 p-2 current-weather">
+            <div class="border border-dark border-1 p-2">
+                <div>
+                    <h3 id="city-name"></h3>
+                    <img src="" alt="" id="currentIcon">
+                </div>
+                <div>
+                    <p id="temperature"></p>
+                </div>
+                <div>
+                    <p id="humidity"></p>
+                </div>
+                <div>
+                    <p id="wind-speed"></p>
+                </div>
+                <div class="uv-index-block">
+                    <p>UV Index: </p>
+                    <p class=" p-2 rounded" id="uv-index"></p>
+                </div>
+            </div>
+
+            <!-- This section is for the 5-day forecast and will be hidden until data is fetched -->
+
+            <div class="p-2">
+                <h4>5-Day Forecast:</h4>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="p-1 bg-secondary text-center">
+                                    <h5 id="day-0"></h5>
+                                </div>
+                                <div class="p-1 text-center bg-secondary">
+                                    <img src="" alt="" id="img-0">
+                                    <p class="card-text" id="temp-0"></p>
+                                    <p class="card-text" id="hum-0"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="p-1 bg-secondary text-center">
+                                    <h5 id="day-1"></h5>
+                                </div>
+                                <div class="p-1 text-center bg-secondary">
+                                    <img src="" alt="" id="img-1">
+                                    <p class="card-text" id="temp-1"></p>
+                                    <p class="card-text" id="hum-1"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="p-1 bg-secondary text-center">
+                                    <h5 id="day-2"></h5>
+                                </div>
+                                <div class="p-1 text-center bg-secondary">
+                                    <img src="" alt="" id="img-2">
+                                    <p class="card-text" id="temp-2"></p>
+                                    <p class="card-text" id="hum-2"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="p-1 bg-secondary text-center">
+                                    <h5 id="day-3"></h5>
+                                </div>
+                                <div class="p-1 text-center bg-secondary">
+                                    <img src="" alt="" id="img-3">
+                                    <p class="card-text" id="temp-3"></p>
+                                    <p class="card-text" id="hum-3"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="p-1 bg-secondary text-center">
+                                    <h5 id="day-4"></h5>
+                                </div>
+                                <div class="p-1 text-center bg-secondary">
+                                    <img src="" alt="" id="img-4">
+                                    <p class="card-text" id="temp-4"></p>
+                                    <p class="card-text" id="hum-4"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- This is the footer -->
+    <footer class="bg-dark text-light p-2">Created and Powered with JavaScript and Bootstrap &copy 2023</footer>
+
+    <!-- Scripts -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/script.js"></script>
+
+</body>
+
+</html>
