@@ -40,17 +40,17 @@ function searchCity() {
 
 // This function retreives weather data for coordinates.
 
-function getListCity(coordinates) {
-    apiURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=minutely,hourly&units=imperial&appid=a767954b67503e646c0379088695d623";
+// function getListCity(coordinates) {
+//     apiURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=minutely,hourly&units=imperial&appid=a767954b67503e646c0379088695d623";
 
-    fetch(apiURL).then(function (response) {
-        if (response.ok) {
-            response.json().then(function (data) {
-                getCurrentWeather(data);
-            })
-        }
-    })
-}
+//     fetch(apiURL).then(function (response) {
+//         if (response.ok) {
+//             response.json().then(function (data) {
+//                 getCurrentWeather(data);
+//             })
+//         }
+//     })
+// }
 
 // this function extract and display the data on the page for current weather it also adjust the uv-index dynamically based on the current rating using colors via classes and CSS
 
@@ -132,13 +132,14 @@ function convertUnixTime(data, index) {
     return (dateObject.toLocaleDateString());
 }
 
-// This calls the find city function when the user clicks the search button and resets the form for additional submissions
+// This calls the search city function when the user clicks the search button and resets the form for additional submissions
 
 $("#search-button").on("click", function (e) {
     e.preventDefault();
 
     searchCity();
 
+    // I get an error when trying to reset the form ---haven't figured it out.
     $("form")[0].reset();
 })
 
